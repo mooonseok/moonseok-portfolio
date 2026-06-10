@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
+import Box from '@mui/material/Box';
 import { SITE } from '@/data/site';
+import { pretendard, jetbrainsMono } from '@/theme/fonts';
+import { ThemeRegistry } from '@/theme/theme-registry';
+import { SiteHeader } from '@/components/site-header/site-header';
+import { SiteFooter } from '@/components/site-footer/site-footer';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -13,10 +18,26 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // ②단계에서 ThemeProvider + AppRouterCacheProvider + next/font 를 이 레이아웃에 주입한다.
   return (
-    <html lang="ko">
-      <body>{children}</body>
+    <html
+      lang="ko"
+      className={`${pretendard.variable} ${jetbrainsMono.variable}`}
+    >
+      <body>
+        <ThemeRegistry>
+          <Box
+            sx={{
+              minHeight: '100dvh',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </Box>
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }

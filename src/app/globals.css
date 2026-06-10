@@ -22,3 +22,24 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/*
+ * reduced-motion 전역 오버라이드 (design-spec.md §9.1).
+ * CSS 주도 애니메이션·전환·뷰 트랜지션을 한 곳에서 무효화한다.
+ * (JS 주도 애니메이션은 use-reduced-motion 훅으로 별도 분기 — ③단계)
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
