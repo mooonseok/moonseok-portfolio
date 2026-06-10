@@ -50,15 +50,15 @@ export function SiteHeader() {
           <Typography
             component={Link}
             href="/"
+            variant="overline"
             sx={{
-              fontWeight: 800,
-              letterSpacing: '-0.02em',
-              fontSize: '1.125rem',
+              fontSize: '0.8rem',
+              fontWeight: 600,
               color: 'text.primary',
               mr: 'auto',
             }}
           >
-            {SITE.name}
+            {SITE.brand}
           </Typography>
 
           {/* 데스크톱 네비 */}

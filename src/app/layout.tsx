@@ -9,10 +9,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} — ${SITE.role}`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.role} · Portfolio`,
+    template: `%s · ${SITE.role}`,
   },
-  description: SITE.positioning,
+  description:
+    'Flutter 모바일 엔지니어 포트폴리오 — 제스처 캔버스, 키오스크 OTA, 실시간 SSE, Redis 캐싱.',
 };
 
 export default function RootLayout({

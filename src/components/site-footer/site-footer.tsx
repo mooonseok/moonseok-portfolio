@@ -25,8 +25,8 @@ export function SiteFooter() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="body2" color="text.secondary">
-          © {SITE.name} · {SITE.role}
+        <Typography variant="footnote" color="text.secondary">
+          {SITE.brand}
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Link href={`mailto:${SITE.email}`} color="text.secondary" variant="body2">
