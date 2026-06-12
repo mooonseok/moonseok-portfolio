@@ -5,39 +5,106 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import type { Project } from '@/data/types';
 import { DOT_GRID } from '@/theme/theme';
+import { GestureDemoContainer } from '@/components/gesture-demo/gesture-demo-container';
 
 interface ProjectCardProps {
   project: Project;
   featured?: boolean;
 }
 
+// duration.hover(150ms) + easing.standard 토큰과 동일 값
+const HOVER_TRANSITION =
+  'border-color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1)';
+
+const cardBaseSx = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  height: '100%',
+  bgcolor: 'background.paper',
+  border: 1,
+  borderColor: 'divider',
+  color: 'text.primary',
+  transition: HOVER_TRANSITION,
+  '&:hover': { borderColor: 'text.primary' },
+} as const;
+
+function CardMeta({ project }: { project: Project }) {
+  return (
+    <Box
+      sx={{
+        mt: 'auto',
+        pt: 2,
+        display: 'flex',
+        alignItems: 'baseline',
+        justifyContent: 'space-between',
+        gap: 2,
+      }}
+    >
+      <Typography variant="figcaption" color="text.secondary">
+        {project.metric.value}
+      </Typography>
+      <Typography
+        variant="figcaption"
+        color="secondary.main"
+        sx={{ whiteSpace: 'nowrap' }}
+      >
+        의사결정 보기 →
+      </Typography>
+    </Box>
+  );
+}
+
 /**
- * 벤토 프로젝트 카드. 텍스트 최소화 — 강점 라벨 / 훅 헤드라인 / 수치 / CTA만.
- * artifact(분저장)는 데모 스테이지, blueprint(내부 시스템)는 모눈 도면 배경.
- * (design-spec.md §1.1 / §3.2)
+ * 벤토 프로젝트 카드 (design-spec.md §3.2).
+ * - featured(분저장): 제스처 데모 티저 내장 — 데모 조작과 충돌하지 않게 카드 전체가 아닌
+ *   헤드라인·CTA만 링크
+ * - 일반(도면형): 카드 전체 링크 + 모눈 도트 배경
  */
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   const num = String(project.index).padStart(2, '0');
-  const isBlueprint = project.variant === 'blueprint';
+  const href = `/projects/${project.slug}`;
+
+  if (featured) {
+    return (
+      <Box sx={{ ...cardBaseSx, p: { xs: 3, md: 4 } }}>
+        <Typography variant="overline" color="text.secondary">
+          {num} / {project.strength}
+        </Typography>
+        <Typography
+          component={Link}
+          href={href}
+          variant="h3"
+          sx={{
+            mt: 1,
+            fontWeight: 700,
+            wordBreak: 'keep-all',
+            color: 'text.primary',
+            '&:hover': { color: 'secondary.main' },
+          }}
+        >
+          {project.hook}
+        </Typography>
+
+        <Box sx={{ mt: 3, flexGrow: 1 }}>
+          <GestureDemoContainer variant="teaser" />
+        </Box>
+
+        <Box component={Link} href={href} sx={{ display: 'block' }}>
+          <CardMeta project={project} />
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <Box
       component={Link}
-      href={`/projects/${project.slug}`}
+      href={href}
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-        p: { xs: 3, md: featured ? 4 : 3 },
-        bgcolor: 'background.paper',
-        border: 1,
-        borderColor: 'divider',
-        color: 'text.primary',
-        ...(isBlueprint ? DOT_GRID : {}),
-        // duration.hover(150ms) + easing.standard 토큰과 동일. 서버 컴포넌트라 리터럴 사용.
-        transition:
-          'border-color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+        ...cardBaseSx,
+        p: 3,
+        ...DOT_GRID,
         '&:hover': { borderColor: 'text.primary', transform: 'translateY(-2px)' },
         '&:active': { transform: 'scale(0.985)' },
       }}
@@ -46,54 +113,13 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         {num} / {project.strength}
       </Typography>
       <Typography
-        variant={featured ? 'h3' : 'h6'}
+        variant="h6"
+        component="p"
         sx={{ mt: 1, fontWeight: 700, wordBreak: 'keep-all' }}
       >
         {project.hook}
       </Typography>
-
-      {featured && (
-        <Box
-          sx={{
-            mt: 3,
-            flexGrow: 1,
-            minHeight: 180,
-            border: 1,
-            borderColor: 'divider',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            bgcolor: 'background.default',
-            ...DOT_GRID,
-          }}
-        >
-          <Typography variant="figcaption" color="text.secondary">
-            제스처 데모 (준비 중)
-          </Typography>
-        </Box>
-      )}
-
-      <Box
-        sx={{
-          mt: featured ? 3 : 'auto',
-          pt: 2,
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'space-between',
-          gap: 2,
-        }}
-      >
-        <Typography variant="figcaption" color="text.secondary">
-          {project.metric.value}
-        </Typography>
-        <Typography
-          variant="figcaption"
-          color="secondary.main"
-          sx={{ whiteSpace: 'nowrap' }}
-        >
-          의사결정 보기 →
-        </Typography>
-      </Box>
+      <CardMeta project={project} />
     </Box>
   );
 }
