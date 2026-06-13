@@ -10,7 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { SITE } from '@/data/site';
@@ -47,19 +46,23 @@ export function SiteHeader() {
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ gap: 2 }}>
-          <Typography
+          {/* 무명 마크 — 이름·직함 없이 홈 링크. 호버 시 45° 회전(radius 0 모티프) */}
+          <Box
             component={Link}
             href="/"
-            variant="overline"
-            sx={{
-              fontSize: '0.8rem',
-              fontWeight: 600,
-              color: 'text.primary',
-              mr: 'auto',
-            }}
+            aria-label="홈"
+            sx={{ mr: 'auto', display: 'inline-flex', p: 1, ml: -1 }}
           >
-            {SITE.brand}
-          </Typography>
+            <Box
+              sx={{
+                width: 14,
+                height: 14,
+                bgcolor: 'secondary.main',
+                transition: 'transform 200ms cubic-bezier(0.4, 0, 0.2, 1)',
+                '*:hover > &': { transform: 'rotate(45deg)' },
+              }}
+            />
+          </Box>
 
           {/* 데스크톱 네비 */}
           <Box

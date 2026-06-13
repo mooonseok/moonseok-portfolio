@@ -1,6 +1,5 @@
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import { SITE } from '@/data/site';
 
@@ -25,9 +24,7 @@ export function SiteFooter() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="footnote" color="text.secondary">
-          {SITE.brand}
-        </Typography>
+        <Box sx={{ width: 12, height: 12, bgcolor: 'secondary.main' }} aria-hidden />
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Link href={`mailto:${SITE.email}`} color="text.secondary" variant="body2">
             {SITE.email}
