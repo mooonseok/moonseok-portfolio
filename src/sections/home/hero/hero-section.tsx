@@ -17,7 +17,7 @@ export function HeroSection() {
     <Section sx={{ pt: { xs: 9, md: 16 }, pb: { xs: 8, md: 12 } }}>
       <Box sx={{ maxWidth: 900 }}>
         <Typography variant="overline" color="text.secondary">
-          I BUILD
+          만든 것들
         </Typography>
         <Box sx={{ mt: { xs: 2, md: 2.5 } }}>
           <KineticHeadline />

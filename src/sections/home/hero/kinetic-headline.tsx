@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
-/** 5개 케이스를 명사구로 — 형용·은유 0, 케이스 1:1 매핑(오글거림 제거). */
+/** 5개 케이스를 동사 종결로 — 번역톤(명사 나열·무생물 의인화) 제거, 케이스 1:1 매핑. */
 const PHRASES = [
-  '변형 제스처 캔버스',
-  '키오스크 자동복구 + OTA',
-  'SSE 실시간 파이프라인',
-  'Redis 집계 캐싱',
-  '3계층 운영 대시보드',
+  '손가락 하나로 다룬다',
+  '벗어나도 스스로 돌아온다',
+  '끊겨도 알아서 다시 잇는다',
+  '미리 계산해 즉시 띄운다',
+  '상태를 갈라 안정시킨다',
 ] as const;
 const INTERVAL = 2200;
 

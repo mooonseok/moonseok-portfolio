@@ -11,7 +11,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "UI ENGINEERING",
     "variant": "artifact",
     "title": "분저장 — 제스처 캔버스",
-    "hook": "한 손가락 캔버스",
+    "hook": "손끝으로 옮기고 돌리고 키운다",
     "metric": {
       "value": "Google Play 누적 약 1만",
       "source": "Google Play 공개 지표"
@@ -34,7 +34,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "ARCHITECTURE",
     "variant": "blueprint",
     "title": "현장 키오스크 — watchdog + 무중단 OTA",
-    "hook": "안 죽는 키오스크",
+    "hook": "풀려도 스스로 돌아온다",
     "metric": {
       "value": "분 단위 OTA 반영",
       "source": "Dart 코드 변경 기준, Shorebird patch"
@@ -57,7 +57,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "REALTIME",
     "variant": "blueprint",
     "title": "SSE 실시간 데이터 파이프라인",
-    "hook": "단방향에 맞춘 SSE",
+    "hook": "끊겨도 다시 잇는 실시간",
     "metric": {
       "value": "단방향 실시간 스트리밍",
       "source": "연결 종료 시 자동 재연결 (NestJS 서버 + fetch-event-source 클라이언트)"
@@ -80,7 +80,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "PERFORMANCE",
     "variant": "blueprint",
     "title": "Redis 랭킹·집계 캐싱",
-    "hook": "40배 빨라진 집계",
+    "hook": "집계를 40ms에서 1ms로",
     "metric": {
       "value": "약 40배 (40ms→~1ms)",
       "source": "합성 주문 50만 건 시뮬레이션, order_items 풀스캔 집계 vs Redis 캐시 단건 조회"
@@ -103,7 +103,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "FRONTEND",
     "variant": "blueprint",
     "title": "Next.js 운영 대시보드",
-    "hook": "상태를 나눈 대시보드",
+    "hook": "서버·화면 상태를 따로 관리",
     "metric": {
       "value": "3계층 일관 구조",
       "source": "담당 섹션 Container-Presentational + MVVM(use-*) 적용"

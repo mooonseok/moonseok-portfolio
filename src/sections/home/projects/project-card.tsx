@@ -77,6 +77,8 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           variant="h3"
           sx={{
             mt: 1,
+            // 훅이 3어절 초단문이라 featured는 한 단계 낮춰 휑함 방지
+            fontSize: 'clamp(1.5rem, 2.8vw, 1.9rem)',
             fontWeight: 700,
             wordBreak: 'keep-all',
             color: 'text.primary',
