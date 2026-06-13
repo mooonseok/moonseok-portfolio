@@ -44,4 +44,13 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       { label: 'PostgreSQL' },
     ],
   },
+  {
+    title: '웹',
+    items: [
+      { label: 'Next.js', slug: 'ops-dashboard' },
+      { label: 'React Query', slug: 'ops-dashboard' },
+      { label: 'Zustand', slug: 'ops-dashboard' },
+      { label: 'SVG 차트' },
+    ],
+  },
 ] as const;

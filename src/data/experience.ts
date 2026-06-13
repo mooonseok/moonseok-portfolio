@@ -14,7 +14,7 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     period: '2025.10 — 현재',
     role: '모바일 · 풀스택 엔지니어',
-    cases: ['kiosk-ota', 'realtime-sse', 'redis-ranking'],
+    cases: ['kiosk-ota', 'realtime-sse', 'redis-ranking', 'ops-dashboard'],
   },
   {
     period: '2021.09 — 2025.10',

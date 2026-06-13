@@ -5,6 +5,7 @@ import { CodeCompareTabs } from '@/components/code-compare/code-compare-tabs';
 import { WatchdogStateDiagram } from '@/components/diagrams/watchdog-state-diagram';
 import { SseSequenceDiagram } from '@/components/diagrams/sse-sequence-diagram';
 import { RedisCompare } from '@/components/diagrams/redis-compare';
+import { DashboardArchitectureDiagram } from '@/components/diagrams/dashboard-architecture-diagram';
 import { FigCaption } from '@/components/fig-caption/fig-caption';
 
 interface EvidenceBlockProps {
@@ -32,6 +33,8 @@ export function EvidenceBlock({ slug }: EvidenceBlockProps) {
       return <SseSequenceDiagram />;
     case 'redis-ranking':
       return <RedisCompare />;
+    case 'ops-dashboard':
+      return <DashboardArchitectureDiagram />;
     default:
       return <FigCaption index={0}>도식 준비 중</FigCaption>;
   }

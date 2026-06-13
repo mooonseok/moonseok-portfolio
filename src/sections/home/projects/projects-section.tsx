@@ -25,7 +25,7 @@ export function ProjectsSection() {
         color="text.secondary"
         sx={{ display: 'block', mt: 1.5, mb: 4 }}
       >
-        5분이라면 ① 캔버스 → ② 키오스크 → ③ 경력 순서를 권합니다.
+        5분이라면 ① 캔버스 → ② 키오스크 → ④ Redis 순서를 권합니다.
       </Typography>
 
       <Box
@@ -51,7 +51,8 @@ export function ProjectsSection() {
             delay={60 * (i + 1)}
             sx={{
               display: 'flex',
-              gridColumn: { md: i < 2 ? 'span 5' : 'span 12' },
+              // 우측 2단(span5) + 하단 2칸(span6) 비대칭 벤토
+              gridColumn: { md: i < 2 ? 'span 5' : 'span 6' },
             }}
           >
             <ProjectCard project={project} />

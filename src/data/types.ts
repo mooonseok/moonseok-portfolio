@@ -9,7 +9,8 @@ export type ProjectSlug =
   | 'diary-canvas'
   | 'kiosk-ota'
   | 'realtime-sse'
-  | 'redis-ranking';
+  | 'redis-ranking'
+  | 'ops-dashboard';
 
 /**
  * 카드 비주얼 2타입 (design-spec.md §1.1).
@@ -23,7 +24,8 @@ export type Strength =
   | 'UI ENGINEERING'
   | 'ARCHITECTURE'
   | 'REALTIME'
-  | 'PERFORMANCE';
+  | 'PERFORMANCE'
+  | 'FRONTEND';
 
 /** 정량 수치 + 출처 각주 (불변 제약 4 — 수치는 출처와 동시 노출). */
 export interface Metric {
