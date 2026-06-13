@@ -26,14 +26,21 @@ export function HeroSection() {
       >
         <Box>
           <Typography variant="overline" color="text.secondary">
-            MOBILE ENGINEER
+            MOBILE · PRODUCT ENGINEER
           </Typography>
           <Typography variant="h1" sx={{ mt: 1 }}>
-            Flutter 엔지니어
+            {SITE.role}
             <Box component="span" sx={{ color: 'secondary.main' }}>
               {' · '}
               {SITE.years}
             </Box>
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ mt: 2.5, maxWidth: '48ch', wordBreak: 'keep-all' }}
+          >
+            {SITE.tagline}
           </Typography>
 
           <Box sx={{ mt: 4 }}>

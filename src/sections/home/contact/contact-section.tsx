@@ -12,7 +12,7 @@ export function ContactSection() {
         CONTACT
       </Typography>
       <Typography variant="h2" sx={{ mt: 1, mb: 3 }}>
-        연락
+        연락처
       </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
         <Button

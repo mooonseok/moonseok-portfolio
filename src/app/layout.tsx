@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE.role}`,
   },
   description:
-    'Flutter 모바일 엔지니어 포트폴리오 — 제스처 캔버스, 키오스크 OTA, 실시간 SSE, Redis 캐싱.',
+    '모바일 · 프로덕트 엔지니어 5년차 포트폴리오. 앱 5종 출시 — 제스처 캔버스 UI, 키오스크 무중단 OTA, 실시간 SSE 파이프라인, Redis 랭킹 캐싱(약 40배·합성 데이터 기준). Flutter · NestJS · Redis · Next.js.',
 };
 
 export default function RootLayout({

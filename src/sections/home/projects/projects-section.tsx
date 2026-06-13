@@ -25,7 +25,7 @@ export function ProjectsSection() {
         color="text.secondary"
         sx={{ display: 'block', mt: 1.5, mb: 4 }}
       >
-        5분이라면 ① 캔버스 → ② 키오스크 → ③ Experience 순서를 권합니다.
+        5분이라면 ① 캔버스 → ② 키오스크 → ③ 경력 순서를 권합니다.
       </Typography>
 
       <Box
