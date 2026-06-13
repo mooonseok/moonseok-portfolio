@@ -154,7 +154,7 @@ export function DashboardArchitectureDiagram() {
             <Edge d="M 551 76 L 551 128" />
           </g>
           <g className="step" style={{ transitionDelay: '400ms' }}>
-            <Node x={478} y={240} w={146} label="View" sub="SVG 차트 · 테이블" />
+            <Node x={478} y={240} w={146} label="View" sub="테이블 · 리스트" />
             <Edge d="M 551 184 L 551 236" />
             <text x={628} y={216} textAnchor="end" fontFamily={FONT} fontSize={8.5} fill={MUTED}>
               useMemo · useCallback

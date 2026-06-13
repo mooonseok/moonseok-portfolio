@@ -23,7 +23,8 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.hook };
+  // 카드 훅은 3어절 초단문이라 meta 설명엔 문제 한 문장(problemStatement)을 사용
+  return { title: project.title, description: PROJECT_DETAILS[project.slug].problemStatement };
 }
 
 const TOC_ITEMS: readonly TocItem[] = [

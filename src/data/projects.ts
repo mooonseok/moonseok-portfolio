@@ -11,7 +11,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "UI ENGINEERING",
     "variant": "artifact",
     "title": "분저장 — 제스처 캔버스",
-    "hook": "한 손가락으로 회전·확대·이동 — atan2와 전역 좌표로 직접 푼 변형 캔버스",
+    "hook": "한 손가락 캔버스",
     "metric": {
       "value": "Google Play 누적 약 1만",
       "source": "Google Play 공개 지표"
@@ -34,7 +34,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "ARCHITECTURE",
     "variant": "blueprint",
     "title": "현장 키오스크 — watchdog + 무중단 OTA",
-    "hook": "강제로 풀려도 스스로 복귀하고, 코드 수정은 심사 없이 분 단위로 — 충돌은 플래그 하나로",
+    "hook": "안 죽는 키오스크",
     "metric": {
       "value": "분 단위 OTA 반영",
       "source": "Dart 코드 변경 기준, Shorebird patch"
@@ -57,7 +57,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "REALTIME",
     "variant": "blueprint",
     "title": "SSE 실시간 데이터 파이프라인",
-    "hook": "단방향 푸시엔 단방향답게 SSE — 끊김을 기본값으로 두고 인증·재연결을 코드로 통제",
+    "hook": "단방향에 맞춘 SSE",
     "metric": {
       "value": "단방향 실시간 스트리밍",
       "source": "연결 종료 시 자동 재연결 (NestJS 서버 + fetch-event-source 클라이언트)"
@@ -80,7 +80,7 @@ export const PROJECTS: readonly Project[] = [
     "strength": "PERFORMANCE",
     "variant": "blueprint",
     "title": "Redis 랭킹·집계 캐싱",
-    "hook": "매 요청 Postgres 풀스캔 집계를 매시간 사전계산 캐시로 — 합성 50만 건 기준 40ms→~1ms",
+    "hook": "40배 빨라진 집계",
     "metric": {
       "value": "약 40배 (40ms→~1ms)",
       "source": "합성 주문 50만 건 시뮬레이션, order_items 풀스캔 집계 vs Redis 캐시 단건 조회"
@@ -103,10 +103,10 @@ export const PROJECTS: readonly Project[] = [
     "strength": "FRONTEND",
     "variant": "blueprint",
     "title": "Next.js 운영 대시보드",
-    "hook": "근태·정산을 한 화면에 — 차트 라이브러리 0, 상태 출처는 서버·전역 두 갈래로 일원화",
+    "hook": "상태를 나눈 대시보드",
     "metric": {
-      "value": "차트 라이브러리 의존성 0",
-      "source": "정산·근태 차트 SVG 직접 구현, 외부 차트 라이브러리 미추가"
+      "value": "3계층 일관 구조",
+      "source": "담당 섹션 Container-Presentational + MVVM(use-*) 적용"
     },
     "role": "프론트엔드 엔지니어 (Next.js)",
     "period": "재직 중",
@@ -116,7 +116,7 @@ export const PROJECTS: readonly Project[] = [
       "React Query",
       "Zustand",
       "TypeScript",
-      "SVG",
+      "Container/Presentational",
       "Cypress"
     ]
   }

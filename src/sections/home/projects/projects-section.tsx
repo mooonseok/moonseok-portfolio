@@ -17,15 +17,8 @@ export function ProjectsSection() {
       <Typography variant="overline" color="text.secondary">
         SELECTED WORK
       </Typography>
-      <Typography variant="h2" sx={{ mt: 1 }}>
+      <Typography variant="h2" sx={{ mt: 1, mb: 4 }}>
         케이스 스터디
-      </Typography>
-      <Typography
-        variant="footnote"
-        color="text.secondary"
-        sx={{ display: 'block', mt: 1.5, mb: 4 }}
-      >
-        5분이라면 ① 캔버스 → ② 키오스크 → ④ Redis 순서를 권합니다.
       </Typography>
 
       <Box

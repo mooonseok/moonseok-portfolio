@@ -50,7 +50,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       { label: 'Next.js', slug: 'ops-dashboard' },
       { label: 'React Query', slug: 'ops-dashboard' },
       { label: 'Zustand', slug: 'ops-dashboard' },
-      { label: 'SVG 차트' },
+      { label: 'Cypress' },
     ],
   },
 ] as const;
